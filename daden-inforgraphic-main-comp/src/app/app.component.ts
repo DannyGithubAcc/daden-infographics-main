@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'daden-inforgraphic-main-comp';
+  prop1: string = "Hallo";
 }
