@@ -145,13 +145,16 @@ main{
 }
 
 .card{
-	background-color:white;
+	background-color:rgb(177, 177, 177);
 	aspect-ratio:1 / 1;
 	padding:1em;
 	box-shadow: 0em 0.1em 0.25em var(--primary-80);
 	border-radius:1em;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: .5mm solid gray;
 }
 
 .card--title{
