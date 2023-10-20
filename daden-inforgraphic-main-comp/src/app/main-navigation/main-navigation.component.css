@@ -1,0 +1,17 @@
+.main-container {
+    & nav {
+         background-color: #a9a9a9;
+       & ul {
+             display: flex;
+            & li {
+                 list-style: none;
+                 padding:  20px 40px;
+                 cursor: pointer;
+                 color: whitesmoke;
+                 &:hover { background-color: #797979; 
+                 transition: all 1s;
+                 }
+             }
+         }
+     }
+ }
