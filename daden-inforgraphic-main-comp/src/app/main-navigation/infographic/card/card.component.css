@@ -1,0 +1,14 @@
+form {
+    & input {
+        display: flex;
+        width: 100%;
+    }
+}
+
+.title {
+    border-top: 1px solid black;
+}
+
+.card {
+    margin: 8px;
+}

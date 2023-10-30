@@ -11,5 +11,5 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./main-navigation.component.css']
 })
 export class MainNavigationComponent {
-
+  
 }

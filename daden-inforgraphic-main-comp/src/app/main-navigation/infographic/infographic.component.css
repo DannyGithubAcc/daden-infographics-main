@@ -1,0 +1,9 @@
+app-card {
+    display: flex;
+}
+
+.infographic {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
