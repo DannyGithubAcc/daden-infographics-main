@@ -32,6 +32,12 @@ public listCards = [
   {id: 4, title:'Robin'},
   {id: 5, title:'Antman'},
   {id: 6, title:'Spiderman'},
+  {id: 7, title:'Manthing'},
+  {id: 2, title:'Batman'},
+  {id: 3, title:'BatGirl'},
+  {id: 4, title:'Robin'},
+  {id: 5, title:'Antman'},
+  {id: 6, title:'Spiderman'},
   {id: 7, title:'Manthing'}
 ];
 
