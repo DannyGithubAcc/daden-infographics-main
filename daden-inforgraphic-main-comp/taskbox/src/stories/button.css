@@ -1,30 +1,72 @@
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: inherit;
+  text-transform: uppercase;
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
+  border-radius: var(--size-050);
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  transition-property: background-color, color;
+  transition-duration: var(--time-050);
 }
+
+/* TYPES */
+
 .storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+  color: var(--white-100);
+  background-color: var(--dark-100);
 }
 .storybook-button--secondary {
-  color: #333;
+  color: var(--dark-100);
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
+
+/* SIZES */
+
 .storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+  font-size: 0.75em;
+  padding: var(--size-050) var(--size-100);
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+.storybook-button--medium { 
+  font-size: 1em;
+  padding: var(--size-050) var(--size-100);
 }
 .storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+  font-size: 1em;
+  padding: var(--size-100) var(--size-200);
+}
+
+/* STATES */
+
+.storybook-button--primary:hover{
+  background-color: var(--dark-075);
+}
+
+.storybook-button--secondary:hover{
+  background-color: var(--dark-025);
+}
+
+.storybook-button--primary:active,
+.storybook-button--primary:focus{
+  box-shadow: 0 0 0 var(--size-005) var(--dark-100) inset;
+  background-color: var(--dark-050);
+  color:var(--dark-100);
+}
+
+.storybook-button--secondary:active,
+.storybook-button--secondary:focus{
+  box-shadow: 0 0 0 var(--size-005) var(--dark-100) inset;
+  background-color: var(--dark-025);
+  color:var(--dark-100);
+}
+
+.storybook-button--primary:disabled,
+.storybook-button--primary[disabled]{
+  background-color: var(--dark-025);
+}
+
+.storybook-button--secondary:disabled,
+.storybook-button--secondary[disabled]{
+  color: var(--dark-025);
 }
