@@ -1,14 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-* { 
-    margin: 0; 
-    padding: 0; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-}
-=======
 :root{
-	--background-color:#fff;
-	--foreground-color:#333;
 	
 	--primary-10:hsl(230, 50%, 10%);
 	--primary-20:hsl(230, 50%, 20%);
@@ -29,47 +20,81 @@
 	--margin-xs:0.25em;
 
 	--border-radius:var(--margin-xl);
+
+	--background-color:#fff;
+	--foreground-color:var(--dark-100);
+
+	  /* COLORS */
+  --dark-100:rgba(0,46,61,1);
+  --dark-075:rgba(0,46,61,0.75);
+  --dark-050:rgba(0,46,61,0.5);
+  --dark-025:rgba(0,46,61,0.25);
+  --dark-010:rgba(0,46,61,0.1);
+
+  --white-100:rgba(255,255,255,1);
+
+  --blue-100:rgba(0,142,189,1);
+  --blue-075:rgba(0,142,189,0.75);
+  --blue-050:rgba(0,142,189,0.5);
+  --blue-025:rgba(0,142,189,0.25);
+  --blue-010:rgba(0,142,189,.1);
+  --red-100:rgba(189,47,0,1);
+  --yellow-100:rgb(231,215,24,1);
+  
+  --primary-100:var(--dark-100);
+  --primary-075:var(--dark-075);
+  --primary-050:var(--dark-050);
+  --primary-025:var(--dark-025);
+  --primary-010:var(--dark-010);
+  --complementary-100:var(--red-100);
+
+  /* SIZES */
+  --size-400: 4rem;
+  --size-300: 3rem;
+  --size-200: 2rem;
+  --size-150: 1.5rem;
+  --size-125: 1.25rem;
+  --size-100: 1rem;
+  --size-075: 0.75rem;
+  --size-050: 0.5rem;
+  --size-025: 0.25rem;
+  --size-010: 0.125rem;
+  --size-005: 0.0625rem; /* @16px = 1px*/
+
+  --border-radius-050: var(--size-050);
+
+    /* timing */
+    --time-100: 500ms;
+    --time-050: 250ms;
+
+	/* FONTS */
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+	--font-heading:'Inter', sans-serif;
+	--font-body:'Inter', sans-serif;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 body{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-    color: var(--foreground-color);
-
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-100);
 	min-height:100dvh;
     box-sizing: border-box;
-	
-    font-size: 14px;
+    font-size: 16px;
 	line-height:1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 	display:flex;
 	flex-direction: column;
 }
 
 h1,h2,h3,h4{
 	font-weight:700;
-}
-
-h1{
-	font-size:4em;
-	color:var(--primary-90);
-}
-
-h2{
-	font-size:2.5em;
-	color:var(--primary-70);
-}
-
-h3{
-	font-size:1.5em;
-	color:var(--primary-50);
-}
-
-h4{
-	font-size:0.8em;
-	text-transform: uppercase;
 }
 
 em{

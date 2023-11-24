@@ -1,0 +1,12 @@
+/* src/app/components/text-paragraph/text-paragraph.css */
+p {
+	font-family: var(--font-body);
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.5em;
+}
+  
+.opening {
+	font-weight: 700;
+}
+  

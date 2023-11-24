@@ -1,0 +1,72 @@
+.storybook-button {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  border-radius: var(--border-radius-050);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  transition-property: background-color, color;
+  transition-duration: var(--time-050);
+}
+
+/* TYPES */
+
+.storybook-button--primary {
+  color: var(--white-100);
+  background-color: var(--primary-100);
+}
+.storybook-button--secondary {
+  color: var(--primary-100);
+  background-color: transparent;
+}
+
+/* SIZES */
+
+.storybook-button--small {
+  font-size: 0.75em;
+  padding: var(--size-050) var(--size-100);
+}
+.storybook-button--medium { 
+  font-size: 1em;
+  padding: var(--size-050) var(--size-100);
+}
+.storybook-button--large {
+  font-size: 1em;
+  padding: var(--size-100) var(--size-200);
+}
+
+/* STATES */
+
+.storybook-button--primary:hover{
+  background-color: var(--primary-075);
+}
+
+.storybook-button--secondary:hover{
+  background-color: var(--primary-025);
+}
+
+.storybook-button--primary:active,
+.storybook-button--primary:focus{
+  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;
+  background-color: var(--primary-050);
+  color:var(--primary-100);
+}
+
+.storybook-button--secondary:active,
+.storybook-button--secondary:focus{
+  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;
+  background-color: var(--primary-025);
+  color:var(--primary-100);
+}
+
+.storybook-button--primary:disabled,
+.storybook-button--primary[disabled]{
+  background-color: var(--primary-025);
+}
+
+.storybook-button--secondary:disabled,
+.storybook-button--secondary[disabled]{
+  color: var(--primary-025);
+}
