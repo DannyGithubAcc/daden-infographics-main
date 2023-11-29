@@ -144,7 +144,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a53fd738b978780d39fb5fcc9ae4cfe0088e57a1f6ce674862d57dab9192140bd1c05548a9910db0469a431142886e658ff2e761f15781b2ad430e58d64724d0",
+            "id": "component-ButtonComponent-502c6abda417339da493e76cd3c2a684c773d3fc72909f801205fbff5530b3d366380f430857d0cdf5d633f8408ab2890bd97bda38dd5ff2b9aeddc5780cee29",
             "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -178,15 +178,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 786,
-                            "end": 799,
+                            "pos": 824,
+                            "end": 838,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 334,
                             "tagName": {
-                                "pos": 787,
-                                "end": 795,
+                                "pos": 825,
+                                "end": 833,
                                 "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -253,11 +253,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  imports: [CommonModule],\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  font-family: inherit;\n  text-transform: uppercase;\n  font-weight: 700;\n  border: 0;\n  border-radius: var(--border-radius-050);\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n  transition-property: background-color, color;\n  transition-duration: var(--time-050);\n}\n\n/* TYPES */\n\n.storybook-button--primary {\n  color: var(--white-100);\n  background-color: var(--primary-100);\n}\n.storybook-button--secondary {\n  color: var(--primary-100);\n  background-color: transparent;\n}\n\n/* SIZES */\n\n.storybook-button--small {\n  font-size: 0.75em;\n  padding: var(--size-050) var(--size-100);\n}\n.storybook-button--medium { \n  font-size: 1em;\n  padding: var(--size-050) var(--size-100);\n}\n.storybook-button--large {\n  font-size: 1em;\n  padding: var(--size-100) var(--size-200);\n}\n\n/* STATES */\n\n.storybook-button--primary:hover{\n  background-color: var(--primary-075);\n}\n\n.storybook-button--secondary:hover{\n  background-color: var(--primary-025);\n}\n\n.storybook-button--primary:active,\n.storybook-button--primary:focus{\n  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;\n  background-color: var(--primary-050);\n  color:var(--primary-100);\n}\n\n.storybook-button--secondary:active,\n.storybook-button--secondary:focus{\n  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;\n  background-color: var(--primary-025);\n  color:var(--primary-100);\n}\n\n.storybook-button--primary:disabled,\n.storybook-button--primary[disabled]{\n  background-color: var(--primary-025);\n}\n\n.storybook-button--secondary:disabled,\n.storybook-button--secondary[disabled]{\n  color: var(--primary-025);\n}",
+                    "data": ".storybook-button {\r\n  font-family: inherit;\r\n  text-transform: uppercase;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: var(--border-radius-050);\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n  transition-property: background-color, color;\r\n  transition-duration: var(--time-050);\r\n}\r\n\r\n/* TYPES */\r\n\r\n.storybook-button--primary {\r\n  color: var(--white-100);\r\n  background-color: var(--primary-100);\r\n}\r\n.storybook-button--secondary {\r\n  color: var(--primary-100);\r\n  background-color: transparent;\r\n}\r\n\r\n/* SIZES */\r\n\r\n.storybook-button--small {\r\n  font-size: 0.75em;\r\n  padding: var(--size-050) var(--size-100);\r\n}\r\n.storybook-button--medium { \r\n  font-size: 1em;\r\n  padding: var(--size-050) var(--size-100);\r\n}\r\n.storybook-button--large {\r\n  font-size: 1em;\r\n  padding: var(--size-100) var(--size-200);\r\n}\r\n\r\n/* STATES */\r\n\r\n.storybook-button--primary:hover{\r\n  background-color: var(--primary-075);\r\n}\r\n\r\n.storybook-button--secondary:hover{\r\n  background-color: var(--primary-025);\r\n}\r\n\r\n.storybook-button--primary:active,\r\n.storybook-button--primary:focus{\r\n  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;\r\n  background-color: var(--primary-050);\r\n  color:var(--primary-100);\r\n}\r\n\r\n.storybook-button--secondary:active,\r\n.storybook-button--secondary:focus{\r\n  box-shadow: 0 0 0 var(--size-005) var(--primary-100) inset;\r\n  background-color: var(--primary-025);\r\n  color:var(--primary-100);\r\n}\r\n\r\n.storybook-button--primary:disabled,\r\n.storybook-button--primary[disabled]{\r\n  background-color: var(--primary-025);\r\n}\r\n\r\n.storybook-button--secondary:disabled,\r\n.storybook-button--secondary[disabled]{\r\n  color: var(--primary-025);\r\n}",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -393,7 +393,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-4ac41bd4b5c4d11c764bc559f3bb6fb209f060ac24d6cc620532e17553429068487627a50394cfb3594e2930d56973590c7945c90f87badc5f6c1926f2a3d084",
+            "id": "component-HeaderComponent-dde4fb4bdca62b125924aae8abe849b7530420fffdd4649da1d0dd365e59b5a9ef6f9a4a016cb460138891576d4ac9b17da1978bb779aa21f592b217fecefb9b",
             "file": "src/stories/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -457,11 +457,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport type { User } from '../User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport type { User } from '../User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"storybook-header\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-header {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "data": ".storybook-header {\r\n  font-family: var(--font-body);\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.storybook-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.storybook-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -471,7 +471,7 @@
         {
             "name": "Heading1Component",
             "id": "component-Heading1Component-8f93d1a874b0e782820806032f8407ba58f5be24f869d041e32e3f8dafcf762153ef783b8a79cde0ecd78f9d628f1814eb6f9a1f330c9df11ccd98fb13ab5bb8",
-            "file": "src/stories/heading1/heading1.component.ts",
+            "file": "src/stories/Atoms/Typography/heading1/heading1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -513,7 +513,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "H1{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:4em;\r\n\tfont-weight:700;\r\n\tline-height:1em;\r\n}",
+                    "data": "H1{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:4rem;\r\n\tfont-weight:700;\r\n\tline-height:4rem;\r\n}",
                     "styleUrl": "./heading1.css"
                 }
             ],
@@ -523,7 +523,7 @@
         {
             "name": "Heading2Component",
             "id": "component-Heading2Component-12a0e5d1af792ff64ca7fd677aa22ca0e0086e86c626d931b9d1416a8d733cf82cde796d232941375adf89c9ab1ffe3bab19b3f5d8629f2c694c7e513a895c79",
-            "file": "src/stories/heading2/heading2.component.ts",
+            "file": "src/stories/Atoms/Typography/heading2/heading2.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -565,8 +565,164 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "H2{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:2em;\r\n\tfont-weight:700;\r\n\tline-height:1.25em;\r\n}",
+                    "data": "H2{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:2rem;\r\n\tfont-weight:700;\r\n\tline-height:2.5rem;\r\n}",
                     "styleUrl": "./heading2.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "Heading3Component",
+            "id": "component-Heading3Component-80531f25dec400c58e1a6b3ea32f49a8874f64a1cb44b41ad983a08cf20b19000b068be3e5327f1f7704fcc38e73b0d6caaa5969f25f5c6ab1643e4440d1f3a5",
+            "file": "src/stories/Atoms/Typography/heading3/heading3.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-heading3",
+            "styleUrls": [
+                "./heading3.css"
+            ],
+            "styles": [],
+            "template": "<h3>{{ text }}</h3>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-heading3',\r\n  styleUrls: ['./heading3.css'],\r\n  template: `\r\n    <h3>{{ text }}</h3>\r\n  `,\r\n})\r\nexport class Heading3Component {\r\n  @Input() text: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "H3{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:1.5rem;\r\n\tcolor:var(--dark-050);\r\n\tfont-weight:700;\r\n\tline-height:2rem;\r\n}",
+                    "styleUrl": "./heading3.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "Heading4Component",
+            "id": "component-Heading4Component-30c9b1ad1439f0657eddfc1ee362785bcc3316380b4038ec2766fd07a73c0bdbf2258a9828a7efd1aef07d126d36bfb9ece2767eb88302ddd628b064142b7a0c",
+            "file": "src/stories/Atoms/Typography/heading4/heading4.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-heading4",
+            "styleUrls": [
+                "./heading4.css"
+            ],
+            "styles": [],
+            "template": "<h4>{{ text }}</h4>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-heading4',\r\n  styleUrls: ['./heading4.css'],\r\n  template: `\r\n    <h4>{{ text }}</h4>\r\n  `,\r\n})\r\nexport class Heading4Component {\r\n  @Input() text: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "H4{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:1rem;\r\n\tfont-weight:400;\r\n\tfont-style: italic;\r\n\tletter-spacing: 0.25rem;\r\n\ttext-transform: uppercase;\r\n\tline-height:1.5rem;\r\n}",
+                    "styleUrl": "./heading4.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "Heading5Component",
+            "id": "component-Heading5Component-a1ec111ad1514386fc38eabd45d73066b30ea0c7694ec931d2c09a068d8016dbce96f9a404d47fb53081d28a6864138a161c5c238aa2fb826f4cdf21e212e6cb",
+            "file": "src/stories/Atoms/Typography/heading5/heading5.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-heading5",
+            "styleUrls": [
+                "./heading5.css"
+            ],
+            "styles": [],
+            "template": "<h5>{{ text }}</h5>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-heading5',\r\n  styleUrls: ['./heading5.css'],\r\n  template: `\r\n    <h5>{{ text }}</h5>\r\n  `,\r\n})\r\nexport class Heading5Component {\r\n  @Input() text: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "H5{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:0.75rem;\r\n\tfont-weight:700;\r\n\ttext-transform: uppercase;\r\n\tline-height:1rem;\r\n}",
+                    "styleUrl": "./heading5.css"
                 }
             ],
             "stylesData": "",
@@ -673,6 +829,58 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"infographic\">\r\n<app-card></app-card>\r\n</div>\r\n"
+        },
+        {
+            "name": "labelComponent",
+            "id": "component-labelComponent-7fe926cff91dd8491af4008be5979cd33bc66b0706688c507f68edbdb17a8f481936ab0761d9ffa4416ee3def14ee525570221b783fc142c938a163d8b9a5d9f",
+            "file": "src/stories/Atoms/Typography/label/label.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-label",
+            "styleUrls": [
+                "./label.css"
+            ],
+            "styles": [],
+            "template": "<p class=\"label\">{{ text }}</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-label',\r\n  styleUrls: ['./label.css'],\r\n  template: `\r\n    <p class=\"label\">{{ text }}</p>\r\n  `,\r\n})\r\nexport class labelComponent {\r\n  @Input() text: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".label{\r\n\tfont-family: var(--font-heading);\r\n\tfont-size:1rem;\r\n\tfont-weight:700;\r\n\ttext-transform: uppercase;\r\n\tline-height:1rem;\r\n}",
+                    "styleUrl": "./label.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "MainNavigationComponent",
@@ -782,7 +990,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-a0c9d471a3d5d596ce76092b230e667e05340733edcdafd720faa1ed734068ae0a1d375e0085b3bc56113c659639cdd65e35860f5fad75dcbf624cf56156da70",
+            "id": "component-PageComponent-468bd02c5ad991caeb2e994c41d29fd90c7d9442d2618701241d8231d8702bcd495ce26e748c61283ffec98df97eb90bcc7af81cf37742f91403865f29d08b10",
             "file": "src/stories/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -853,11 +1061,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport type { User } from '../User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport type { User } from '../User';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></storybook-header>\r\n    <section class=\"storybook-page\">\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport default class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-page {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\n.storybook-page h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\n.storybook-page ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.storybook-page .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": ".storybook-page {\r\n  font-family: var(--font-body);\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\n/* .storybook-page h2 {\r\n  font-weight: 700;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n} */\r\n\r\n.storybook-page p {\r\n  margin: 1em 0;\r\n}\r\n\r\n.storybook-page a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\n.storybook-page ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\n.storybook-page li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.storybook-page .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-page .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\n.storybook-page .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -867,7 +1075,7 @@
         {
             "name": "TextParagraphComponent",
             "id": "component-TextParagraphComponent-9c5da6f3c0a5d13c2e983628d4c572ec0e9bc9a70eda2b8354e4ed20308d850331c3e2c424f4446ca5b046a31c2480ec16c16c06186d71a9907af792a4b8ed49",
-            "file": "src/stories/text-paragraph/text-paragraph.component.ts",
+            "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -940,10 +1148,160 @@
                 "defaultValue": "[{\r\n  path: \"\", component: MainNavigationComponent,\r\n  loadChildren: () => import(\"./main-navigation/main-navigation-route\").then((navRoutes) => navRoutes.default),\r\n}]"
             },
             {
+                "name": "background",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+            },
+            {
+                "name": "background",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+            },
+            {
+                "name": "background",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+            },
+            {
+                "name": "breakpoint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "600"
+            },
+            {
+                "name": "breakpoint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "600"
+            },
+            {
+                "name": "breakpoint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "600"
+            },
+            {
+                "name": "code",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "code",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "code",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "color",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+            },
+            {
+                "name": "color",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+            },
+            {
+                "name": "color",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+            },
+            {
+                "name": "headers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+            },
+            {
+                "name": "headers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+            },
+            {
+                "name": "headers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+            },
+            {
                 "name": "Heading1",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/heading1/heading1.stories.ts",
+                "file": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -953,7 +1311,77 @@
                 "name": "Heading2",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/heading2/heading2.stories.ts",
+                "file": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Heading3",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Heading4",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Heading5",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "hoverEffect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+            },
+            {
+                "name": "hoverEffect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+            },
+            {
+                "name": "hoverEffect",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+            },
+            {
+                "name": "label",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/label/label.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -967,7 +1395,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
             },
             {
                 "name": "LoggedIn",
@@ -977,7 +1405,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    user: {\r\n      name: 'Jane Doe',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "LoggedIn",
@@ -987,7 +1415,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const loginButton = await canvas.getByRole('button', {\r\n      name: /Log in/i,\r\n    });\r\n    await userEvent.click(loginButton);\r\n  },\r\n}"
             },
             {
                 "name": "LoggedOut",
@@ -1007,7 +1435,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n}"
             },
             {
                 "name": "Medium",
@@ -1017,7 +1445,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'medium',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    size: 'medium',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -1027,7 +1455,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Atoms/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                "defaultValue": "{\r\n  title: 'Atoms/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -1037,7 +1465,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Header>",
-                "defaultValue": "{\n  title: 'Organisms/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                "defaultValue": "{\r\n  title: 'Organisms/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -1047,17 +1475,77 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
-                "defaultValue": "{\n  title: 'Pages/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                "defaultValue": "{\r\n  title: 'Pages/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "OpeningParagraph",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "pageMargin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "5.55555"
+            },
+            {
+                "name": "pageMargin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "5.55555"
+            },
+            {
+                "name": "pageMargin",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "number",
+                "defaultValue": "5.55555"
+            },
+            {
+                "name": "pageMargins",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
+            },
+            {
+                "name": "pageMargins",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
+            },
+            {
+                "name": "pageMargins",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
             },
             {
                 "name": "preview",
@@ -1077,13 +1565,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "RegularParagraph",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1097,7 +1585,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Small",
@@ -1107,23 +1595,73 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
             },
             {
-                "name": "Template",
+                "name": "spacing",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/heading1/heading1.stories.ts",
+                "file": "src/shared/styles.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Heading1Component>",
-                "defaultValue": "(args: Heading1Component) => ({\r\n  props: args,\r\n})"
+                "type": "object",
+                "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+            },
+            {
+                "name": "spacing",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+            },
+            {
+                "name": "spacing",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+            },
+            {
+                "name": "subheading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
+            },
+            {
+                "name": "subheading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
+            },
+            {
+                "name": "subheading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/heading2/heading2.stories.ts",
+                "file": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Heading2Component>",
@@ -1133,11 +1671,151 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                "file": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Heading1Component>",
+                "defaultValue": "(args: Heading1Component) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Heading3Component>",
+                "defaultValue": "(args: Heading3Component) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Heading4Component>",
+                "defaultValue": "(args: Heading4Component) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Heading5Component>",
+                "defaultValue": "(args: Heading5Component) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/label/label.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<labelComponent>",
+                "defaultValue": "(args: labelComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<TextParagraphComponent>",
                 "defaultValue": "(args: TextParagraphComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+            },
+            {
+                "name": "typography",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+            },
+            {
+                "name": "typography",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n    extrabold: '800',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+            },
+            {
+                "name": "typography",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n    extrabold: '800',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+            },
+            {
+                "name": "zIndex",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/shared/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
+            },
+            {
+                "name": "zIndex",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
+            },
+            {
+                "name": "zIndex",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
             }
         ],
         "functions": [],
@@ -1190,12 +1868,408 @@
                     "defaultValue": "[{\r\n  path: \"\", component: MainNavigationComponent,\r\n  loadChildren: () => import(\"./main-navigation/main-navigation-route\").then((navRoutes) => navRoutes.default),\r\n}]"
                 }
             ],
-            "src/stories/heading1/heading1.stories.ts": [
+            "src/shared/styles.ts": [
+                {
+                    "name": "background",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+                },
+                {
+                    "name": "breakpoint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "600"
+                },
+                {
+                    "name": "code",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "color",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+                },
+                {
+                    "name": "headers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "hoverEffect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+                },
+                {
+                    "name": "pageMargin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "5.55555"
+                },
+                {
+                    "name": "pageMargins",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
+                },
+                {
+                    "name": "spacing",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+                },
+                {
+                    "name": "subheading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "typography",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+                },
+                {
+                    "name": "zIndex",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/shared/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
+                }
+            ],
+            "src/stories/Atoms/Typography/styles.ts": [
+                {
+                    "name": "background",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+                },
+                {
+                    "name": "breakpoint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "600"
+                },
+                {
+                    "name": "code",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "color",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+                },
+                {
+                    "name": "headers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "hoverEffect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+                },
+                {
+                    "name": "pageMargin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "5.55555"
+                },
+                {
+                    "name": "pageMargins",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
+                },
+                {
+                    "name": "spacing",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+                },
+                {
+                    "name": "subheading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "typography",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n    extrabold: '800',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+                },
+                {
+                    "name": "zIndex",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
+                }
+            ],
+            "src/stories/Atoms/Typography/Color/styles.ts": [
+                {
+                    "name": "background",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  app: '#F6F9FC',\r\n  appInverse: '#7A8997',\r\n  positive: '#E1FFD4',\r\n  negative: '#FEDED2',\r\n  warning: '#FFF5CF',\r\n  calmBlue: '#E3F3FF',\r\n}"
+                },
+                {
+                    "name": "breakpoint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "600"
+                },
+                {
+                    "name": "code",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '17px',\r\n  }),\r\n\r\n  small: css({\r\n    fontFamily: typography.type.code,\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '14px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "color",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  // Palette\r\n  primary: '#FF4785', // Coral\r\n  secondary: '#029CFD', // Ocean\r\n  tertiary: '#E3E6E8', // Light grey\r\n\r\n  orange: '#FC521F',\r\n  gold: '#FFAE00',\r\n  green: '#66BF3C',\r\n  seafoam: '#37D5D3',\r\n  purple: '#6F2CAC',\r\n  ultraviolet: '#2A0481',\r\n  red: '#ff4400',\r\n\r\n  // Calm\r\n  bluelight: '#E3F3FF', // rgba($color.blue, 12%)\r\n  bluelighter: '#F5FBFF',\r\n\r\n  // Monochrome\r\n  lightest: '#FFFFFF',\r\n  lighter: '#F7FAFC',\r\n  light: '#EEF3F6',\r\n  mediumlight: '#ECF4F9',\r\n  medium: '#D9E8F2',\r\n  mediumdark: '#73828C',\r\n  dark: '#5C6870',\r\n  darker: '#454E54',\r\n  darkest: '#2E3438',\r\n  tr10: 'rgba(0, 0, 0, 0.1)',\r\n  tr5: 'rgba(0, 0, 0, 0.05)',\r\n\r\n  border: 'hsla(203, 50%, 30%, 0.15)',\r\n\r\n  // Status\r\n  positive: '#448028', // Evergreen\r\n  negative: '#D43900', // Crimson\r\n  warning: '#A15C20', // Burnt sienna\r\n  selected: '#0271B6', // Navy\r\n}"
+                },
+                {
+                    "name": "headers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  hero1: css({\r\n    fontSize: typography.size.l3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  hero2: css({\r\n    fontSize: typography.size.l2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h1: css({\r\n    fontSize: typography.size.l1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h2: css({\r\n    fontSize: typography.size.m3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h3: css({\r\n    fontSize: typography.size.m2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h4: css({\r\n    fontSize: typography.size.m1,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h5: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n  h6: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "hoverEffect",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  border: 1px solid ${color.border};\r\n  border-radius: ${spacing.borderRadius.small}px;\r\n  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;\r\n\r\n  &:hover,\r\n  &.__hover {\r\n    transform: translate3d(0, -3px, 0);\r\n    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;\r\n  }\r\n\r\n  &:active,\r\n  &.__active {\r\n    transform: translate3d(0, 0, 0);\r\n  }\r\n`"
+                },
+                {
+                    "name": "pageMargin",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "defaultValue": "5.55555"
+                },
+                {
+                    "name": "pageMargins",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "css`\r\n  padding: 0 ${spacing.padding.medium}px;\r\n  @media (min-width: ${breakpoint * 1}px) {\r\n    margin: 0 ${pageMargin * 1}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 2}px) {\r\n    margin: 0 ${pageMargin * 2}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 3}px) {\r\n    margin: 0 ${pageMargin * 3}%;\r\n  }\r\n  @media (min-width: ${breakpoint * 4}px) {\r\n    margin: 0 ${pageMargin * 4}%;\r\n  }\r\n`"
+                },
+                {
+                    "name": "spacing",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  padding: {\r\n    small: 10,\r\n    medium: 20,\r\n    large: 30,\r\n  },\r\n  borderRadius: {\r\n    small: 5,\r\n    default: 10,\r\n  },\r\n}"
+                },
+                {
+                    "name": "subheading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  regular: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '18px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n  small: css({\r\n    fontSize: 11,\r\n    fontWeight: typography.weight.extrabold,\r\n    lineHeight: '16px',\r\n    letterSpacing: '0.38em',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  storybookMediumBold: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  storybookMedium: css({\r\n    fontSize: 13,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  largeBold: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '24px',\r\n  }),\r\n  small: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '18px',\r\n  }),\r\n  regularBold: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '20px',\r\n  }),\r\n  smallBold: css({\r\n    fontSize: typography.size.s1,\r\n    fontWeight: typography.weight.bold,\r\n    lineHeight: '18px',\r\n  }),\r\n  large: css({\r\n    fontSize: typography.size.s3,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '24px',\r\n  }),\r\n  regular: css({\r\n    fontSize: typography.size.s2,\r\n    fontWeight: typography.weight.regular,\r\n    lineHeight: '20px',\r\n  }),\r\n}"
+                },
+                {
+                    "name": "typography",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "{\r\n  type: {\r\n    primary: 'inter',\r\n    code: '\"SFMono-Regular\", Consolas, \"Liberation Mono\", Menlo, Courier, monospace',\r\n  },\r\n  weight: {\r\n    regular: '400',\r\n    bold: '700',\r\n    extrabold: '800',\r\n  },\r\n  size: {\r\n    s1: 12,\r\n    s2: 14,\r\n    s3: 16,\r\n    m1: 20,\r\n    m2: 24,\r\n    m3: 28,\r\n    l1: 32,\r\n    l2: 40,\r\n    l3: 48,\r\n    code: 90,\r\n  },\r\n} as const"
+                },
+                {
+                    "name": "zIndex",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/Color/styles.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  tooltip: 2147483647,\r\n}"
+                }
+            ],
+            "src/stories/Atoms/Typography/heading1/heading1.stories.ts": [
                 {
                     "name": "Heading1",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/heading1/heading1.stories.ts",
+                    "file": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1205,19 +2279,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/heading1/heading1.stories.ts",
+                    "file": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Heading1Component>",
                     "defaultValue": "(args: Heading1Component) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/stories/heading2/heading2.stories.ts": [
+            "src/stories/Atoms/Typography/heading2/heading2.stories.ts": [
                 {
                     "name": "Heading2",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/heading2/heading2.stories.ts",
+                    "file": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1227,11 +2301,99 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/heading2/heading2.stories.ts",
+                    "file": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Heading2Component>",
                     "defaultValue": "(args: Heading2Component) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Atoms/Typography/heading3/heading3.stories.ts": [
+                {
+                    "name": "Heading3",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Heading3Component>",
+                    "defaultValue": "(args: Heading3Component) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Atoms/Typography/heading4/heading4.stories.ts": [
+                {
+                    "name": "Heading4",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Heading4Component>",
+                    "defaultValue": "(args: Heading4Component) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Atoms/Typography/heading5/heading5.stories.ts": [
+                {
+                    "name": "Heading5",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Heading5Component>",
+                    "defaultValue": "(args: Heading5Component) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Atoms/Typography/label/label.stories.ts": [
+                {
+                    "name": "label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Atoms/Typography/label/label.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<labelComponent>",
+                    "defaultValue": "(args: labelComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/button/Button.stories.ts": [
@@ -1243,7 +2405,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "Medium",
@@ -1253,7 +2415,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'medium',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'medium',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1263,7 +2425,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Atoms/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'Atoms/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -1273,7 +2435,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
                 },
                 {
                     "name": "Secondary",
@@ -1283,7 +2445,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
                 },
                 {
                     "name": "Small",
@@ -1293,7 +2455,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n    primary: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n}"
                 }
             ],
             "src/stories/header/Header.stories.ts": [
@@ -1305,7 +2467,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    user: {\r\n      name: 'Jane Doe',\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "LoggedOut",
@@ -1325,7 +2487,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Header>",
-                    "defaultValue": "{\n  title: 'Organisms/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'Organisms/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
                 }
             ],
             "src/stories/page/Page.stories.ts": [
@@ -1337,7 +2499,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                    "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const loginButton = await canvas.getByRole('button', {\r\n      name: /Log in/i,\r\n    });\r\n    await userEvent.click(loginButton);\r\n  },\r\n}"
                 },
                 {
                     "name": "LoggedOut",
@@ -1347,7 +2509,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                    "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1357,15 +2519,15 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Page>",
-                    "defaultValue": "{\n  title: 'Pages/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                    "defaultValue": "{\r\n  title: 'Pages/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
-            "src/stories/text-paragraph/text-paragraph.stories.ts": [
+            "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts": [
                 {
                     "name": "OpeningParagraph",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                    "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1375,7 +2537,7 @@
                     "name": "RegularParagraph",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                    "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1385,7 +2547,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/text-paragraph/text-paragraph.stories.ts",
+                    "file": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<TextParagraphComponent>",
@@ -1451,7 +2613,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -1533,6 +2695,609 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "MainNavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "background",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "breakpoint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "code",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "color",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "hoverEffect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargins",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "spacing",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "subheading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "typography",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/shared/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "zIndex",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "background",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "breakpoint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "code",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "color",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "hoverEffect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargins",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "spacing",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "subheading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "typography",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/Color/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "zIndex",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading1/heading1.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Heading1Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading1",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading1/heading1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading2/heading2.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Heading2Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading2/heading2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading3/heading3.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Heading3Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading3",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading3/heading3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading4/heading4.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Heading4Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading4",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading4/heading4.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading5/heading5.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Heading5Component",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading5",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/heading5/heading5.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/label/label.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "labelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/label/label.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/label/label.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "background",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "breakpoint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "code",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "color",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "headers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "hoverEffect",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargin",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "pageMargins",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "spacing",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "subheading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "typography",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/styles.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "zIndex",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextParagraphComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OpeningParagraph",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RegularParagraph",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Atoms/Typography/text-paragraph/text-paragraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1655,64 +3420,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/heading1/heading1.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "Heading1Component",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/heading1/heading1.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Heading1",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/heading1/heading1.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/heading2/heading2.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "Heading2Component",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/heading2/heading2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Heading2",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/heading2/heading2.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/page/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1749,45 +3456,6 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/text-paragraph/text-paragraph.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TextParagraphComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/text-paragraph/text-paragraph.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "OpeningParagraph",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/text-paragraph/text-paragraph.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "RegularParagraph",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/text-paragraph/text-paragraph.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
